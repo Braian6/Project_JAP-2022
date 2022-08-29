@@ -16,9 +16,4 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("Debe Iniciar sesion");
     location.href = "login.html";
   }
-  document.getElementById("chau").addEventListener("click", () => {
-    localStorage.removeItem("item");
-    alert("Gracias por visitar nuestro sitio!! HASTA PRONTO!");
-    location.href = "login.html";
-  });
 });
