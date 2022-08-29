@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
   <style>
     body {
       background-color: rgb(248, 249, 250);
@@ -17,13 +18,23 @@
 </head>
 
 <body>
-  <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+  <hgroup>
+    <h1>Inicio de sesion</h1>
+    <h3><strong>e-mercado</strong></h3>
+  </hgroup>
+
+  <form>
+    <div class="group">
+      <input type="text" id="usuario" placeholder="Nombre">
     </div>
-  </main>
+    <div class="group">
+      <input type="password" id="clave" placeholder="Clave">
+    </div>
+    <button type="button" id="login" class="button buttonBlue" >Ingresar<div class="ripples buttonRipples"><span
+          class="ripplesCircle"></span></div>
+    </button>
+  </form>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
