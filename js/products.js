@@ -8,24 +8,19 @@ function showProductList(){
         htmlContentToAppend += `
                 <div class="list-group-item list-group-item-action">
                     <div class="row">
-                        <div class="col-3 onclick="setProductInfo('${product.id}');" style="cursor: pointer;">
-                            <img src="${product.imgSrc}" alt="${product.description}" class="img-thumbnail">
+                        <div class="col-3">
+                            <img src="${product.image}" alt="product image" class="img-thumbnail">
                         </div>
-                        <div class="col">
+                        <div class="col-9">
                             <div class="row d-flex">
-                                <div class="col-9" onclick="setProductInfo('${product.id}');" style="cursor: pointer;">
-                                    <h4 class="mb-2">${product.name}</h4>
-                                    <div>${product.description}</div>
+                                <div class="col">
+                                    <h4>${product.name + " - " + product.currency + product.cost}</h4>
+                                    <p>${product.description}</p>
                                 </div>
                                 <div class="col-3">
-                                    <p class="text-info text-right my-1">${product.currency + " " + product.cost}</p>
+                                    <p class="text-muted">${product.soldCount} vendidos</p>
                                 </div>
-                            </div>
-                            <div class="row d-flex">
-                                <div class="col text-right mt-2">
-                                    <button type="button" class="btn btn-info btn-sm" onclick="addProdtoCart(${product.id},'${product.name}', '${product.cost}', '${product.currency}', '${product.imgSrc}')">Agregar al carrito</button>
-                                </div>
-                            </div>
+                            </div>   
                         </div>
                     </div>
                 </div>
@@ -37,7 +32,7 @@ function showProductList(){
 document.addEventListener('DOMContentLoaded',()=>{
     getJSONData(PRODUCT_URL_AUTOS).then(function (resultObj) {
         if (resultObj.status === "ok"){
-            listProducts = resultObj.data;
+            listProducts = resultObj.data.products;
             showProductList(listProducts);
             console.log(listProducts);
         }else{
