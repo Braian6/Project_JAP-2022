@@ -1,6 +1,7 @@
 //Array que recepciona los datos recibidos:
 let listProducts = [];
 //En esta funcion, se recibe un array con los datos, y son mostrados en pantalla mediante el DOM:
+
 function showProductList(){
     let htmlContentToAppend = "";
     for(let i = 0; i < listProducts.length; i++){
@@ -24,13 +25,15 @@ function showProductList(){
                         </div>
                     </div>
                 </div>
-                `
+            `
             document.getElementById("car-list-container").innerHTML = htmlContentToAppend;
     };
 };
 
+let cat_ID = localStorage.getItem("catID");
+
 document.addEventListener('DOMContentLoaded',()=>{
-    getJSONData(PRODUCT_URL_AUTOS).then(function (resultObj) {
+    getJSONData(PRODUCTS_URL + cat_ID + EXT_TYPE).then(function (resultObj) {
         if (resultObj.status === "ok"){
             listProducts = resultObj.data.products;
             showProductList(listProducts);
