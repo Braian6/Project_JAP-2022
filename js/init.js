@@ -40,3 +40,9 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+let usuarioLog = localStorage.getItem('usuarioLog');
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById("correo").innerHTML += usuarioLog;
+});
