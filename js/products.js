@@ -46,6 +46,11 @@ function sortProducts(criteria, array) {
   return result;
 }
 
+function setProductID(id) {
+  localStorage.setItem("productID", id);
+  window.location = "product-info.html"
+}
+
 let listProducts = [];
 
 function showProductList() {
@@ -57,6 +62,7 @@ function showProductList() {
         ((maxCost == undefined) || (maxCost != undefined && product.cost <= maxCost))) {
 
         htmlContentToAppend += `
+            <div onclick="setProductID(${product.id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-3">
@@ -71,10 +77,11 @@ function showProductList() {
                                 <div class="col-3">
                                     <p class="text-muted">${product.soldCount} vendidos</p>
                                 </div>
-                            </div>   
+                              </div>   
                         </div>
-                    </div>
+                  </div>
                 </div>
+             </div> 
         `;
     }
     document.getElementById("car-list-container").innerHTML =htmlContentToAppend;
