@@ -45,4 +45,8 @@ let usuarioLog = localStorage.getItem('usuarioLog');
 
 document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById("correo").innerHTML += usuarioLog;
+  document.getElementById("logOut").addEventListener("click", function(){
+    localStorage.removeItem('item');
+    alert("Cerro sesion correctamente!")
+     });
 });

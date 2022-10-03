@@ -44,6 +44,31 @@ function showCommentsList(){
                 document.getElementById("comments").innerHTML = htmlContentToAppend;
             }};
 
+function showRelatedProductsList(array) {
+
+        let htmlContentToAppend = "";
+        for (let i = 0; i < array.length; i++) {
+        let product = array[i];    
+        htmlContentToAppend += `
+                
+                    <div class="col-lg-3 col-md-4 col-6">
+                    <div onclick="setRelatedProductID(${product.id})">
+                        <div class="d-block h-100 list-group-item list-group-item-action">
+                          <img src="${product.image}" alt="" class="img-thumbnail">
+                          <span class="mb-1">${product.name}</span>
+                        </div>  
+                    </div>
+                </div>
+            `
+        }
+    document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+};
+
+function setRelatedProductID(id) {
+    localStorage.setItem("productID", id);
+    window.location = "product-info.html"
+  }
+
 let product_ID = localStorage.getItem("productID");
 
 document.addEventListener('DOMContentLoaded',()=>{
@@ -57,6 +82,7 @@ document.addEventListener('DOMContentLoaded',()=>{
           document.getElementById("productSoldCount").innerHTML = product.soldCount;
 
           showImagesGallery(product.images);
+          showRelatedProductsList(product.relatedProducts);
         } else {
           alert("Ha ocurrido un error");
         }
