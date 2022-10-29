@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById("correo").innerHTML += usuarioLog;
   document.getElementById("logOut").addEventListener("click", function(){
     localStorage.removeItem('item');
+    localStorage.removeItem('usuarioLog');
     alert("Cerro sesion correctamente!")
      });
 });

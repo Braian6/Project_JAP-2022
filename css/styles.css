@@ -38,7 +38,16 @@ nav a {
 }
 
 span {
-  color: gray
+  color: gray;
+  
+}
+
+td {
+  vertical-align: baseline;
+}
+
+th {
+  vertical-align: baseline;
 }
 
 .bd-placeholder-img {
