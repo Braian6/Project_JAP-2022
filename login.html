@@ -24,12 +24,18 @@
     <h3><strong>e-mercado</strong></h3>
   </hgroup>
 
-  <form>
+  <form action="#" id="form" novalidate>
     <div class="group">
-      <input type="text" id="usuario" placeholder="Nombre">
+      <input type="email" class="form-control" id="email" placeholder="Ingresa un correo" required>
+        <div class="invalid-feedback">
+          ¡Falto completar!
+        </div>
     </div>
     <div class="group">
-      <input type="password" id="clave" placeholder="Clave">
+      <input type="password" class="form-control" id="pass" placeholder="Ingresa una contraseña" minlength="6" required>
+        <div class="invalid-feedback">
+          ¡Falto completar!
+        </div>
     </div>
     <button type="button" id="login" class="button buttonBlue" >Ingresar<div class="ripples buttonRipples"><span
           class="ripplesCircle"></span></div>

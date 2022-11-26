@@ -59,10 +59,55 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container"><br><br>
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 order-md-1">
+          <h2 class="mb-3">Perfil</h2>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="form-control"> Primer nombre*</label>
+                <input type="text" class="form-control" id="firstName" onchange="validar()" required>
+                <div class="invalid-feedback">
+                  Falto completar! 
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="">Segundo nombre</label>
+                <input type="text" class="form-control" id="secondName">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for=""> Primer apellido*</label>
+                <input type="text" class="form-control" id="firstSurname" onchange="validar()" required>
+                <div class="invalid-feedback">
+                  Falto completar! 
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="">Segundo apellido</label>
+                <input type="text" class="form-control" id="secondSurname">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for=""> Email</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="">Teléfono de contacto*</label>
+                <input type="number" class="form-control" id="numberCont" onchange="validar()" required>
+                <div class="invalid-feedback">
+                  Falto completar! 
+                </div>
+              </div>
+            </div><hr>
+            <div class="d-grid gap-2 d-md-block" >
+              <button class="btn btn-primary btn-lg" id="saveChanges" type="submit">Guardar cambios</button>
+            </div>
+            <div id="guardado"></div>
+        </div>
+      </div>             
     </div>
   </main>
   <footer class="text-muted">

@@ -11,10 +11,5 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("catID", 103);
     window.location = "products.html";
   });
-  let usuario = JSON.parse(localStorage.getItem("item"));
-  if (usuario == null) {
-    alert("Debe Iniciar sesion");
-    location.href = "login.html";
-  }
 });
 
