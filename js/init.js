@@ -43,15 +43,16 @@ let getJSONData = function(url){
 
 document.addEventListener('DOMContentLoaded',()=>{
   
-  document.getElementById("logOut").addEventListener("click", function(){
-    localStorage.removeItem('datosUser');
-    alert("Cerro sesion correctamente!")
-     });
+  
     let usuario = JSON.parse(sessionStorage.getItem("datosUser"));
     console.log(usuario)
-    if (usuario.email == null) {
+    if (usuario == null) {
       alert("Debe Iniciar sesion");
       location.href = "login.html";
     }
     document.getElementById("correo").innerHTML = usuario.email;
+    document.getElementById("logOut").addEventListener("click", function(){
+      localStorage.removeItem('datosUser');
+      alert("Cerro sesion correctamente!")
+       });
 });
